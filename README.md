@@ -37,14 +37,29 @@ flowchart LR
 | Metric | Value |
 |---|---|
 | Model | MLP 30 → 64 → 32 → 1, 4,097 parameters |
-| Test accuracy | 98.2% on 114 held-out patients |
+| Test accuracy | 96.5% on 114 held-out patients |
 | Circuit | input/param scale 11, logrows 18 (2^18 rows) |
-| Float vs circuit output | 0.000489 vs 0.000488 (1/2048, one quantization step) |
+| Float vs circuit output | 0.997844 vs 0.998047 (off by 0.0002, less than one 1/2048 quantization step) |
 | Proving | ~9 s, proof 25 KB (proving key 1.3 GB, verifying key 0.6 MB) |
 | Local verification | ~0.1 s |
 | On-chain verifier | 15,194 B runtime (under the 24,576 B EIP-170 limit) |
-| On-chain verification cost | ~639k gas |
+| On-chain verification cost | ~644k gas |
 | Tamper test | modified output in calldata → verifier reverts |
+
+### Experiment: removing Sigmoid from the circuit
+
+Same trained model, with the final Sigmoid cut from the ONNX graph. The circuit outputs the raw score (logit) and Sigmoid is applied outside the proof; the decision is unchanged (score > 0 ⇔ probability > 0.5).
+
+| | With Sigmoid | Without Sigmoid |
+|---|---|---|
+| Lookup table | range [-83050, 56052] | none |
+| Scale / logrows | 11 / 18 | 13 / 15 (8× fewer rows) |
+| Proving time | ~9 s | 1.0 s |
+| Proving key / SRS | 1.3 GB / 33.5 MB | 138 MB / 4.2 MB |
+| Output vs PyTorch (0.997844) | 0.998047 | 0.997845 |
+| Verifier runtime / gas | 15,194 B / 644k | 13,426 B / 576k |
+
+Sigmoid was the only lookup-based op, so removing it shrank the circuit 8× and made the result more precise. On-chain cost fell only ~11%: verification is dominated by fixed pairing checks, not circuit size.
 
 ## Design decisions
 
@@ -56,7 +71,7 @@ flowchart LR
 ## Limitations and next steps
 
 - **Feature scaling happens outside the circuit.** The proof starts from standardized features, so it doesn't prove that the raw measurements were scaled correctly. Folding the scaler into the first layer would close this gap, at some cost in precision.
-- **Sigmoid is inside the circuit.** It's a lookup-based op. Exporting logits and thresholding outside the circuit would make the circuit cheaper.
+- **The main pipeline still proves Sigmoid.** The experiment above shows the no-Sigmoid circuit is cheaper and more precise; switching the main verifier to it is a next step.
 - **Inputs are public.** Real medical data would use `hashed` or `private` input visibility.
 - **Local chain only.** Verified on Anvil; a testnet deployment is next.
 - **Training isn't seeded**, so rerunning the notebook yields a new model and requires regenerating every artifact.
@@ -98,6 +113,7 @@ Notes:
 ```
 main.ipynb        end-to-end pipeline: training → ONNX → proof → on-chain verification
 artifacts/        generated files: network.onnx, settings.json, proof.json, Verifier.sol, ...
+artifacts_logits/ same pipeline without Sigmoid (experiment)
 contracts/        Foundry project: verifier + tests (valid proof, tampered output)
 ```
 

@@ -20,5 +20,5 @@ contracts/cache/
 contracts/out/
 
 # ZK artifacts (large / regenerable)
-artifacts/*.key
-artifacts/*.compiled
+artifacts*/*.key
+artifacts*/*.compiled

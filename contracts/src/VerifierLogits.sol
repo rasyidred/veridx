@@ -6,61 +6,61 @@ contract Halo2Verifier {
     uint256 internal constant    DELTA = 4131629893567559867359510883348571134090853742863529169391034518566172092834;
     uint256 internal constant        R = 21888242871839275222246405745257275088548364400416034343698204186575808495617; 
 
-    uint256 internal constant FIRST_QUOTIENT_X_CPTR = 0x05e4;
-    uint256 internal constant  LAST_QUOTIENT_X_CPTR = 0x06a4;
+    uint256 internal constant FIRST_QUOTIENT_X_CPTR = 0x04e4;
+    uint256 internal constant  LAST_QUOTIENT_X_CPTR = 0x05a4;
 
-    uint256 internal constant                VK_MPTR = 0x0760;
-    uint256 internal constant         VK_DIGEST_MPTR = 0x0760;
-    uint256 internal constant     NUM_INSTANCES_MPTR = 0x0780;
-    uint256 internal constant                 K_MPTR = 0x07a0;
-    uint256 internal constant             N_INV_MPTR = 0x07c0;
-    uint256 internal constant             OMEGA_MPTR = 0x07e0;
-    uint256 internal constant         OMEGA_INV_MPTR = 0x0800;
-    uint256 internal constant    OMEGA_INV_TO_L_MPTR = 0x0820;
-    uint256 internal constant   HAS_ACCUMULATOR_MPTR = 0x0840;
-    uint256 internal constant        ACC_OFFSET_MPTR = 0x0860;
-    uint256 internal constant     NUM_ACC_LIMBS_MPTR = 0x0880;
-    uint256 internal constant NUM_ACC_LIMB_BITS_MPTR = 0x08a0;
-    uint256 internal constant              G1_X_MPTR = 0x08c0;
-    uint256 internal constant              G1_Y_MPTR = 0x08e0;
-    uint256 internal constant            G2_X_1_MPTR = 0x0900;
-    uint256 internal constant            G2_X_2_MPTR = 0x0920;
-    uint256 internal constant            G2_Y_1_MPTR = 0x0940;
-    uint256 internal constant            G2_Y_2_MPTR = 0x0960;
-    uint256 internal constant      NEG_S_G2_X_1_MPTR = 0x0980;
-    uint256 internal constant      NEG_S_G2_X_2_MPTR = 0x09a0;
-    uint256 internal constant      NEG_S_G2_Y_1_MPTR = 0x09c0;
-    uint256 internal constant      NEG_S_G2_Y_2_MPTR = 0x09e0;
+    uint256 internal constant                VK_MPTR = 0x0620;
+    uint256 internal constant         VK_DIGEST_MPTR = 0x0620;
+    uint256 internal constant     NUM_INSTANCES_MPTR = 0x0640;
+    uint256 internal constant                 K_MPTR = 0x0660;
+    uint256 internal constant             N_INV_MPTR = 0x0680;
+    uint256 internal constant             OMEGA_MPTR = 0x06a0;
+    uint256 internal constant         OMEGA_INV_MPTR = 0x06c0;
+    uint256 internal constant    OMEGA_INV_TO_L_MPTR = 0x06e0;
+    uint256 internal constant   HAS_ACCUMULATOR_MPTR = 0x0700;
+    uint256 internal constant        ACC_OFFSET_MPTR = 0x0720;
+    uint256 internal constant     NUM_ACC_LIMBS_MPTR = 0x0740;
+    uint256 internal constant NUM_ACC_LIMB_BITS_MPTR = 0x0760;
+    uint256 internal constant              G1_X_MPTR = 0x0780;
+    uint256 internal constant              G1_Y_MPTR = 0x07a0;
+    uint256 internal constant            G2_X_1_MPTR = 0x07c0;
+    uint256 internal constant            G2_X_2_MPTR = 0x07e0;
+    uint256 internal constant            G2_Y_1_MPTR = 0x0800;
+    uint256 internal constant            G2_Y_2_MPTR = 0x0820;
+    uint256 internal constant      NEG_S_G2_X_1_MPTR = 0x0840;
+    uint256 internal constant      NEG_S_G2_X_2_MPTR = 0x0860;
+    uint256 internal constant      NEG_S_G2_Y_1_MPTR = 0x0880;
+    uint256 internal constant      NEG_S_G2_Y_2_MPTR = 0x08a0;
 
-    uint256 internal constant CHALLENGE_MPTR = 0x1000;
+    uint256 internal constant CHALLENGE_MPTR = 0x0dc0;
 
-    uint256 internal constant THETA_MPTR = 0x1000;
-    uint256 internal constant  BETA_MPTR = 0x1020;
-    uint256 internal constant GAMMA_MPTR = 0x1040;
-    uint256 internal constant     Y_MPTR = 0x1060;
-    uint256 internal constant     X_MPTR = 0x1080;
-    uint256 internal constant  ZETA_MPTR = 0x10a0;
-    uint256 internal constant    NU_MPTR = 0x10c0;
-    uint256 internal constant    MU_MPTR = 0x10e0;
+    uint256 internal constant THETA_MPTR = 0x0dc0;
+    uint256 internal constant  BETA_MPTR = 0x0de0;
+    uint256 internal constant GAMMA_MPTR = 0x0e00;
+    uint256 internal constant     Y_MPTR = 0x0e20;
+    uint256 internal constant     X_MPTR = 0x0e40;
+    uint256 internal constant  ZETA_MPTR = 0x0e60;
+    uint256 internal constant    NU_MPTR = 0x0e80;
+    uint256 internal constant    MU_MPTR = 0x0ea0;
 
-    uint256 internal constant       ACC_LHS_X_MPTR = 0x1100;
-    uint256 internal constant       ACC_LHS_Y_MPTR = 0x1120;
-    uint256 internal constant       ACC_RHS_X_MPTR = 0x1140;
-    uint256 internal constant       ACC_RHS_Y_MPTR = 0x1160;
-    uint256 internal constant             X_N_MPTR = 0x1180;
-    uint256 internal constant X_N_MINUS_1_INV_MPTR = 0x11a0;
-    uint256 internal constant          L_LAST_MPTR = 0x11c0;
-    uint256 internal constant         L_BLIND_MPTR = 0x11e0;
-    uint256 internal constant             L_0_MPTR = 0x1200;
-    uint256 internal constant   INSTANCE_EVAL_MPTR = 0x1220;
-    uint256 internal constant   QUOTIENT_EVAL_MPTR = 0x1240;
-    uint256 internal constant      QUOTIENT_X_MPTR = 0x1260;
-    uint256 internal constant      QUOTIENT_Y_MPTR = 0x1280;
-    uint256 internal constant          R_EVAL_MPTR = 0x12a0;
-    uint256 internal constant   PAIRING_LHS_X_MPTR = 0x12c0;
-    uint256 internal constant   PAIRING_LHS_Y_MPTR = 0x12e0;
-    uint256 internal constant   PAIRING_RHS_X_MPTR = 0x1300;
-    uint256 internal constant   PAIRING_RHS_Y_MPTR = 0x1320;
+    uint256 internal constant       ACC_LHS_X_MPTR = 0x0ec0;
+    uint256 internal constant       ACC_LHS_Y_MPTR = 0x0ee0;
+    uint256 internal constant       ACC_RHS_X_MPTR = 0x0f00;
+    uint256 internal constant       ACC_RHS_Y_MPTR = 0x0f20;
+    uint256 internal constant             X_N_MPTR = 0x0f40;
+    uint256 internal constant X_N_MINUS_1_INV_MPTR = 0x0f60;
+    uint256 internal constant          L_LAST_MPTR = 0x0f80;
+    uint256 internal constant         L_BLIND_MPTR = 0x0fa0;
+    uint256 internal constant             L_0_MPTR = 0x0fc0;
+    uint256 internal constant   INSTANCE_EVAL_MPTR = 0x0fe0;
+    uint256 internal constant   QUOTIENT_EVAL_MPTR = 0x1000;
+    uint256 internal constant      QUOTIENT_X_MPTR = 0x1020;
+    uint256 internal constant      QUOTIENT_Y_MPTR = 0x1040;
+    uint256 internal constant          R_EVAL_MPTR = 0x1060;
+    uint256 internal constant   PAIRING_LHS_X_MPTR = 0x1080;
+    uint256 internal constant   PAIRING_LHS_Y_MPTR = 0x10a0;
+    uint256 internal constant   PAIRING_RHS_X_MPTR = 0x10c0;
+    uint256 internal constant   PAIRING_RHS_Y_MPTR = 0x10e0;
 
     function verifyProof(
         bytes calldata proof,
@@ -212,11 +212,11 @@ contract Halo2Verifier {
 
             {
                 // Load vk_digest and num_instances of vk into memory
-                mstore(0x0760, 0x1cef0ed4cfc1d52917911a893947f8da563c18937ff16a5118be8c9f1429ba98) // vk_digest
-                mstore(0x0780, 0x000000000000000000000000000000000000000000000000000000000000001f) // num_instances
+                mstore(0x0620, 0x05f37967b1658d6e965445538161c900971057b9f13f988638440915c1d01c98) // vk_digest
+                mstore(0x0640, 0x000000000000000000000000000000000000000000000000000000000000001f) // num_instances
 
                 // Check valid length of proof
-                success := and(success, eq(0x0e40, proof.length))
+                success := and(success, eq(0x0c00, proof.length))
 
                 // Check valid length of instances
                 let num_instances := mload(NUM_INSTANCES_MPTR)
@@ -256,7 +256,7 @@ contract Halo2Verifier {
 
                 // Phase 2
                 for
-                    { let proof_cptr_end := add(proof_cptr, 0x0180) }
+                    { let proof_cptr_end := add(proof_cptr, 0x0100) }
                     lt(proof_cptr, proof_cptr_end)
                     {}
                 {
@@ -268,7 +268,7 @@ contract Halo2Verifier {
 
                 // Phase 3
                 for
-                    { let proof_cptr_end := add(proof_cptr, 0x0280) }
+                    { let proof_cptr_end := add(proof_cptr, 0x0200) }
                     lt(proof_cptr, proof_cptr_end)
                     {}
                 {
@@ -290,7 +290,7 @@ contract Halo2Verifier {
 
                 // Read evaluations
                 for
-                    { let proof_cptr_end := add(proof_cptr, 0x0740) }
+                    { let proof_cptr_end := add(proof_cptr, 0x0600) }
                     lt(proof_cptr, proof_cptr_end)
                     {}
                 {
@@ -312,75 +312,67 @@ contract Halo2Verifier {
                 success, proof_cptr, hash_mptr := read_ec_point(success, proof_cptr, hash_mptr, q) // W'
 
                 // Load full vk into memory
-                mstore(0x0760, 0x1cef0ed4cfc1d52917911a893947f8da563c18937ff16a5118be8c9f1429ba98) // vk_digest
-                mstore(0x0780, 0x000000000000000000000000000000000000000000000000000000000000001f) // num_instances
-                mstore(0x07a0, 0x0000000000000000000000000000000000000000000000000000000000000012) // k
-                mstore(0x07c0, 0x30644259cd94e7dd5045d7a27013b7fcd21c9e3b7fa75222e7bda49b729b0401) // n_inv
-                mstore(0x07e0, 0x0f60c8fe0414cb9379b2d39267945f6bd60d06a05216231b26a9fcf88ddbfebe) // omega
-                mstore(0x0800, 0x0e1165d221ab96da2bb4efe1b8fbf541b58d00917384a41bc6ab624d6d3e2b76) // omega_inv
-                mstore(0x0820, 0x15a9c33a6d34b8fb8e5c3ff61814ca50c878ed14bc17d9442cd5c127bf33fd6d) // omega_inv_to_l
-                mstore(0x0840, 0x0000000000000000000000000000000000000000000000000000000000000000) // has_accumulator
-                mstore(0x0860, 0x0000000000000000000000000000000000000000000000000000000000000000) // acc_offset
-                mstore(0x0880, 0x0000000000000000000000000000000000000000000000000000000000000000) // num_acc_limbs
-                mstore(0x08a0, 0x0000000000000000000000000000000000000000000000000000000000000000) // num_acc_limb_bits
-                mstore(0x08c0, 0x0000000000000000000000000000000000000000000000000000000000000001) // g1_x
-                mstore(0x08e0, 0x0000000000000000000000000000000000000000000000000000000000000002) // g1_y
-                mstore(0x0900, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2) // g2_x_1
-                mstore(0x0920, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed) // g2_x_2
-                mstore(0x0940, 0x090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b) // g2_y_1
-                mstore(0x0960, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa) // g2_y_2
-                mstore(0x0980, 0x186282957db913abd99f91db59fe69922e95040603ef44c0bd7aa3adeef8f5ac) // neg_s_g2_x_1
-                mstore(0x09a0, 0x17944351223333f260ddc3b4af45191b856689eda9eab5cbcddbbe570ce860d2) // neg_s_g2_x_2
-                mstore(0x09c0, 0x06d971ff4a7467c3ec596ed6efc674572e32fd6f52b721f97e35b0b3d3546753) // neg_s_g2_y_1
-                mstore(0x09e0, 0x06ecdb9f9567f59ed2eee36e1e1d58797fd13cc97fafc2910f5e8a12f202fa9a) // neg_s_g2_y_2
-                mstore(0x0a00, 0x1363377a2feb7c1cf0c606dc9f5b5be55e4a2cf4e48150bdee0d2edf7cc93ab3) // fixed_comms[0].x
-                mstore(0x0a20, 0x18564f0d92ddb14a87b52202f3ef52f2d69bcc610fa074b12b37bd059f001f0e) // fixed_comms[0].y
-                mstore(0x0a40, 0x0e7bcdff9f6046c06a281de34ece95316d595196e9f935d454c7390d2da11fcc) // fixed_comms[1].x
-                mstore(0x0a60, 0x25184298a6daf4d2ccf7f37d6209b714a03e05c61f00dcbad724e5778fe49785) // fixed_comms[1].y
-                mstore(0x0a80, 0x16e631e71ace1577622407daef269f5acbb01b02e619a6934a0db738d7336eb6) // fixed_comms[2].x
-                mstore(0x0aa0, 0x22ab80328d400057e086474494014acd8b2a1721ebcea06d12e6930e20c21736) // fixed_comms[2].y
-                mstore(0x0ac0, 0x12b7a4770e0b584c5bfecdb7a5f637336119252801014cc80e7961a90a6c23d0) // fixed_comms[3].x
-                mstore(0x0ae0, 0x132783617dac5fca2ebab2094031ec93387c2dc253615ee7d8176697036bc052) // fixed_comms[3].y
-                mstore(0x0b00, 0x21d99f3cd5e6686d23fd9b85b22ac8e560204a6a718c4de3a0b8133f24d04028) // fixed_comms[4].x
-                mstore(0x0b20, 0x2d0ba65d5012ab200cac5cb27d172c4b89fcceb501aef1993616dda9ba18c0ec) // fixed_comms[4].y
-                mstore(0x0b40, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[5].x
-                mstore(0x0b60, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[5].y
-                mstore(0x0b80, 0x27815286527be632ba8a605bd088e7f227d4f0b0e2abb8b8ff0a7ec77e42ac3e) // fixed_comms[6].x
-                mstore(0x0ba0, 0x251937ced76894ea93d4bd00b3476b99ac9f6b25de4a82dba113ffbe26254da6) // fixed_comms[6].y
-                mstore(0x0bc0, 0x227bdfdf58b80705862655cd486a59494992fb79418c0f640368a875f3180ba6) // fixed_comms[7].x
-                mstore(0x0be0, 0x18935aec214de6c8179ae5a1c04141a69d3f068b900a1f4a8b3a0fc09ed5df07) // fixed_comms[7].y
-                mstore(0x0c00, 0x227bdfdf58b80705862655cd486a59494992fb79418c0f640368a875f3180ba6) // fixed_comms[8].x
-                mstore(0x0c20, 0x18935aec214de6c8179ae5a1c04141a69d3f068b900a1f4a8b3a0fc09ed5df07) // fixed_comms[8].y
-                mstore(0x0c40, 0x04acae265a062eebb49bf044c747037f7af1e122c742a547d851107f77c813de) // fixed_comms[9].x
-                mstore(0x0c60, 0x0892a11c9f734ffc4c2c9bcc702d383a193512275ae5053cde62385f2f49efb6) // fixed_comms[9].y
-                mstore(0x0c80, 0x1f732fceec136a1c78ee0802be78773ffab54500e6bee43ddeea73c30471aeb6) // fixed_comms[10].x
-                mstore(0x0ca0, 0x21df54d7f3f64dd6e559f15222b1d56a80a9d720e73cbaa4432215d2f10064df) // fixed_comms[10].y
-                mstore(0x0cc0, 0x03134e8cf1b4ff404e5adbdc357b47310114d87ff031824ad3bc34719d2c2b45) // fixed_comms[11].x
-                mstore(0x0ce0, 0x251dd817c3258e35f1084aa3556a4d5b38f9946138abb2180b795782d8035cfe) // fixed_comms[11].y
-                mstore(0x0d00, 0x1db8fa66a9ce12247e1694c86f13704ebfb13c78f57a3b29e0eabdac7898094b) // fixed_comms[12].x
-                mstore(0x0d20, 0x27674e0bc1ca9dc3b124bfdd1366ae859b8f47ddfe07c0465cb9a7664c775850) // fixed_comms[12].y
-                mstore(0x0d40, 0x217b3d823168a3621e5cc9f0b8b85121c9275c01b7fbb92370b7a4444ea5785f) // fixed_comms[13].x
-                mstore(0x0d60, 0x2d95524afcee4451c2ba63fe3dd758d79b22fbc26cc205aef6aa809558ac22c2) // fixed_comms[13].y
-                mstore(0x0d80, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[14].x
-                mstore(0x0da0, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[14].y
-                mstore(0x0dc0, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[15].x
-                mstore(0x0de0, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[15].y
-                mstore(0x0e00, 0x301eaf3c202263d25983567bcdeefa59f75ad18832a0f184ddc07a060b5ab200) // permutation_comms[0].x
-                mstore(0x0e20, 0x255fee65b9a982cfb7b92fbf9e60c36bfde56e87e7dbec117023b3e618adde36) // permutation_comms[0].y
-                mstore(0x0e40, 0x0c6803a51dce3f8ec0bd552a7a08bfc3aff93a4956fe574cecadd2017d3ebca8) // permutation_comms[1].x
-                mstore(0x0e60, 0x13b0c1ac067af1c92a3480645082ece38aeab341d82ea6da11db7d8438a73cde) // permutation_comms[1].y
-                mstore(0x0e80, 0x2418cd08cfeab1dbafa634ecb7aa3ef2bb9e4628e2cc3aec20a439e424bfed05) // permutation_comms[2].x
-                mstore(0x0ea0, 0x1c5c7d293261dc217e946d560aea2c2a45f80e89445f7a34ad7a0d552397bc06) // permutation_comms[2].y
-                mstore(0x0ec0, 0x028f57dbc79b081ea2e379b92382ec17d05dbf8cbf9dbd528caa94f50e12859a) // permutation_comms[3].x
-                mstore(0x0ee0, 0x18e3ef2fe57a130a9a671f3efef01d2f359bee352dec182c61afd3e3474e071b) // permutation_comms[3].y
-                mstore(0x0f00, 0x0a5dd1d31c8e86c410b6034c1ef1565537a5da91f19b6798893627b19713e1aa) // permutation_comms[4].x
-                mstore(0x0f20, 0x166a3dbfbcccaf127ae58a8d26984165f379dbcf3347a4e17f7b79beb96c1246) // permutation_comms[4].y
-                mstore(0x0f40, 0x16f00f3aa7f92d784f31ca7132e80ff8745872445051dfc600d2e52793722308) // permutation_comms[5].x
-                mstore(0x0f60, 0x2f606be92b69fd4dbd83e63f6510ce853d01659d8ce0e0d72fa00420e8015b24) // permutation_comms[5].y
-                mstore(0x0f80, 0x301567d8157ee5bba1d6dc456be26d895e5c33b1a54b726ed6641adf29c51646) // permutation_comms[6].x
-                mstore(0x0fa0, 0x213725c559819c5e10dacb2c2dda26ef65c2ab9768b56d5eb2ea0071e7445b56) // permutation_comms[6].y
-                mstore(0x0fc0, 0x2b3c7ae921964350b5e8ade61a5ab1892a50cfe9c96a750346756cfebd2fed8c) // permutation_comms[7].x
-                mstore(0x0fe0, 0x1f260f0ea234e7719dda1604bf931b01b93b73e6015c79da330627834cb0ac62) // permutation_comms[7].y
+                mstore(0x0620, 0x05f37967b1658d6e965445538161c900971057b9f13f988638440915c1d01c98) // vk_digest
+                mstore(0x0640, 0x000000000000000000000000000000000000000000000000000000000000001f) // num_instances
+                mstore(0x0660, 0x000000000000000000000000000000000000000000000000000000000000000f) // k
+                mstore(0x0680, 0x3063edaa444bddc677fcd515f614555a777997e0a9287d1e62bf6dd004d82001) // n_inv
+                mstore(0x06a0, 0x2b7ddfe4383c8d806530b94d3120ce6fcb511871e4d44a65f0acd0b96a8a942e) // omega
+                mstore(0x06c0, 0x1f67bc4574eaef5e630a13c710221a3e3d491e59fddabaf321e56f3ca8d91624) // omega_inv
+                mstore(0x06e0, 0x2427343dea588e4242e165ef52d4c1f5986149f372f5c87534f7f6274ef4eeff) // omega_inv_to_l
+                mstore(0x0700, 0x0000000000000000000000000000000000000000000000000000000000000000) // has_accumulator
+                mstore(0x0720, 0x0000000000000000000000000000000000000000000000000000000000000000) // acc_offset
+                mstore(0x0740, 0x0000000000000000000000000000000000000000000000000000000000000000) // num_acc_limbs
+                mstore(0x0760, 0x0000000000000000000000000000000000000000000000000000000000000000) // num_acc_limb_bits
+                mstore(0x0780, 0x0000000000000000000000000000000000000000000000000000000000000001) // g1_x
+                mstore(0x07a0, 0x0000000000000000000000000000000000000000000000000000000000000002) // g1_y
+                mstore(0x07c0, 0x198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c2) // g2_x_1
+                mstore(0x07e0, 0x1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed) // g2_x_2
+                mstore(0x0800, 0x090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b) // g2_y_1
+                mstore(0x0820, 0x12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa) // g2_y_2
+                mstore(0x0840, 0x186282957db913abd99f91db59fe69922e95040603ef44c0bd7aa3adeef8f5ac) // neg_s_g2_x_1
+                mstore(0x0860, 0x17944351223333f260ddc3b4af45191b856689eda9eab5cbcddbbe570ce860d2) // neg_s_g2_x_2
+                mstore(0x0880, 0x06d971ff4a7467c3ec596ed6efc674572e32fd6f52b721f97e35b0b3d3546753) // neg_s_g2_y_1
+                mstore(0x08a0, 0x06ecdb9f9567f59ed2eee36e1e1d58797fd13cc97fafc2910f5e8a12f202fa9a) // neg_s_g2_y_2
+                mstore(0x08c0, 0x0c0d5ee9cc3161305bf7598cbe58ca6b29b806b5b6bbd4f1aad98b01d5477ec6) // fixed_comms[0].x
+                mstore(0x08e0, 0x074ea94e8a5e506571438b7bdbc9ed3c5b8e666a0691b4eaca0b712e9f17731d) // fixed_comms[0].y
+                mstore(0x0900, 0x15a51539aff2087850cd2d7a60e8c87d1f9a8ef180c289d96294e328767e4ba2) // fixed_comms[1].x
+                mstore(0x0920, 0x24886af2f62be3465d54a10798576d26eca16de4af6d40eb3df1f89f58e4b2aa) // fixed_comms[1].y
+                mstore(0x0940, 0x2b50655bb4560d7529bf4070e81524fb13b859ecaa13aaed24a594441ad71918) // fixed_comms[2].x
+                mstore(0x0960, 0x0eeb09447c8dc370c352e005bd887ed783b4ec37a76e462a3aae7de6fbdde0d1) // fixed_comms[2].y
+                mstore(0x0980, 0x0af3fedf53f20516340c9e760aac9099be5b60fa45e799065a789184e6793b34) // fixed_comms[3].x
+                mstore(0x09a0, 0x0a98b4f47b4d78e2d12f402bb967ef840643285b4ff2dc3eed76eb6a19fc1c69) // fixed_comms[3].y
+                mstore(0x09c0, 0x17881fce00abed09cacfed24154998a264a2a7ada429dd0f4f36ec41dfa29bf6) // fixed_comms[4].x
+                mstore(0x09e0, 0x0ee415c34027094b915458e4fefd099a1d44ff31e76c7d370eb608c5ec89f9f8) // fixed_comms[4].y
+                mstore(0x0a00, 0x0ded83aec6b712b6e636bca8f45c72a14df0301335ec1ec66bac94488152aef8) // fixed_comms[5].x
+                mstore(0x0a20, 0x25dce2964ea82c685ce879d4b9847f968fba8bdd8bc9e58738569184129b24aa) // fixed_comms[5].y
+                mstore(0x0a40, 0x06affa40f4cc75aab6797cce5c8ed437261215fed2da84d15fa34d8c354ce7f8) // fixed_comms[6].x
+                mstore(0x0a60, 0x27f7950db905b00dcc511063eccece5fb91f575e924e5ba6d777e942a29a2466) // fixed_comms[6].y
+                mstore(0x0a80, 0x2515f5b1035fef07cc7a5e47dd1cec7df8374d57a27e7eb076b60421ab247b65) // fixed_comms[7].x
+                mstore(0x0aa0, 0x21fec0e93d75973e81bcad201a71d21302fb4f78a4e01a7978c288aa190beab1) // fixed_comms[7].y
+                mstore(0x0ac0, 0x29d0488d851591ba3d7638c791dd29609a38493ccf53ee9c4b2b15bb38827939) // fixed_comms[8].x
+                mstore(0x0ae0, 0x0539b063fa15d9eee7925c72d8c3bc82cd158c1109e95a6811c25d6363b6d1a3) // fixed_comms[8].y
+                mstore(0x0b00, 0x22f6151eb082c99ae9393cd0353f5bd64e804cb9340ff76f7801f0be7f698960) // fixed_comms[9].x
+                mstore(0x0b20, 0x1394fb4ebafbda73905f7e799c2d398cf1d09904f96d53a1c39c12af1aa25205) // fixed_comms[9].y
+                mstore(0x0b40, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[10].x
+                mstore(0x0b60, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[10].y
+                mstore(0x0b80, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[11].x
+                mstore(0x0ba0, 0x0000000000000000000000000000000000000000000000000000000000000000) // fixed_comms[11].y
+                mstore(0x0bc0, 0x1cec1e1bfd4346dd83f0e21bf23f35ef336de7b8e24f91a06d4cec17ada4f6fd) // permutation_comms[0].x
+                mstore(0x0be0, 0x1dd3630d26509589243762c5a468b512f5d5751e8058b8a3894e36ee4ec88d56) // permutation_comms[0].y
+                mstore(0x0c00, 0x169f6fd7edfd2475392949f75d02e2ab2ad38c09d98beb4aeee44749b77fefab) // permutation_comms[1].x
+                mstore(0x0c20, 0x1f36488747c3171ca413a7486be23e8c3298adf825084c8822b5af4124955271) // permutation_comms[1].y
+                mstore(0x0c40, 0x09b4e6fb30b64fefea61c9c0c860fde8e027bb3d54b1b3fa89ba628650ad4571) // permutation_comms[2].x
+                mstore(0x0c60, 0x0ed4e85154b84c53e3faeb2798f87b2466af8db5f58dd30e85b12ff96c1b9476) // permutation_comms[2].y
+                mstore(0x0c80, 0x22455e978f0196526fcb998e88704247ccbff4095da71c151acd6825686255f3) // permutation_comms[3].x
+                mstore(0x0ca0, 0x15642641e745d587bb38f77ea47a49bcab644c03e72e6f27d038a27314a423ca) // permutation_comms[3].y
+                mstore(0x0cc0, 0x134d4c92f0e1ddd5826647a2910a3564f6eeb4f3490c835d9f76e6df457b422e) // permutation_comms[4].x
+                mstore(0x0ce0, 0x239266aa60bd97da4aca9f6fb6e6ed734b233e051bcc59ed9440a880c4f2c395) // permutation_comms[4].y
+                mstore(0x0d00, 0x2088af25aa0e34bf0f4c20ca64b49140e1a0d6cdf112ebd8101123d6f102bf3d) // permutation_comms[5].x
+                mstore(0x0d20, 0x1f5830913996f02732be12245caa73333cb5aa38799e4fbfa4c91e6de23515e7) // permutation_comms[5].y
+                mstore(0x0d40, 0x1c7e6a596de17b6c56d101038423fa1934e3235b300ff566315bc92687b85e76) // permutation_comms[6].x
+                mstore(0x0d60, 0x0ae249a311cd0251f311c27ea78b568e870e0f69d9f86030390ebdbffd05435a) // permutation_comms[6].y
+                mstore(0x0d80, 0x09344707444ab0d92db362db47f42122eb055d81237f90d04967970cbe774d35) // permutation_comms[7].x
+                mstore(0x0da0, 0x1f651a7268c6b64a2c8971f257aec6efacfcf112bd27cc2bbf60d43c6c9f707d) // permutation_comms[7].y
 
                 // Read accumulator from instances
                 if mload(HAS_ACCUMULATOR_MPTR) {
@@ -513,17 +505,17 @@ contract Halo2Verifier {
                 let quotient_eval_numer
                 let y := mload(Y_MPTR)
                 {
-                    let f_11 := calldataload(0x0924)
+                    let f_7 := calldataload(0x07a4)
                     let var0 := 0x2
-                    let var1 := sub(R, f_11)
+                    let var1 := sub(R, f_7)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_11, var2, R)
+                    let var3 := mulmod(f_7, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_0 := calldataload(0x06e4)
-                    let a_2 := calldataload(0x0724)
+                    let a_4 := calldataload(0x0664)
+                    let a_0 := calldataload(0x05e4)
+                    let a_2 := calldataload(0x0624)
                     let var7 := addmod(a_0, a_2, R)
                     let var8 := sub(R, var7)
                     let var9 := addmod(a_4, var8, R)
@@ -531,17 +523,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := var10
                 }
                 {
-                    let f_12 := calldataload(0x0944)
+                    let f_8 := calldataload(0x07c4)
                     let var0 := 0x2
-                    let var1 := sub(R, f_12)
+                    let var1 := sub(R, f_8)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_12, var2, R)
+                    let var3 := mulmod(f_8, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_5 := calldataload(0x0784)
-                    let a_1 := calldataload(0x0704)
-                    let a_3 := calldataload(0x0744)
+                    let a_5 := calldataload(0x0684)
+                    let a_1 := calldataload(0x0604)
+                    let a_3 := calldataload(0x0644)
                     let var7 := addmod(a_1, a_3, R)
                     let var8 := sub(R, var7)
                     let var9 := addmod(a_5, var8, R)
@@ -549,17 +541,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var10, r)
                 }
                 {
-                    let f_11 := calldataload(0x0924)
+                    let f_7 := calldataload(0x07a4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_11)
+                    let var1 := sub(R, f_7)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_11, var2, R)
+                    let var3 := mulmod(f_7, var2, R)
                     let var4 := 0x2
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_0 := calldataload(0x06e4)
-                    let a_2 := calldataload(0x0724)
+                    let a_4 := calldataload(0x0664)
+                    let a_0 := calldataload(0x05e4)
+                    let a_2 := calldataload(0x0624)
                     let var7 := mulmod(a_0, a_2, R)
                     let var8 := sub(R, var7)
                     let var9 := addmod(a_4, var8, R)
@@ -567,17 +559,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var10, r)
                 }
                 {
-                    let f_12 := calldataload(0x0944)
+                    let f_8 := calldataload(0x07c4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_12)
+                    let var1 := sub(R, f_8)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_12, var2, R)
+                    let var3 := mulmod(f_8, var2, R)
                     let var4 := 0x2
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_5 := calldataload(0x0784)
-                    let a_1 := calldataload(0x0704)
-                    let a_3 := calldataload(0x0744)
+                    let a_5 := calldataload(0x0684)
+                    let a_1 := calldataload(0x0604)
+                    let a_3 := calldataload(0x0644)
                     let var7 := mulmod(a_1, a_3, R)
                     let var8 := sub(R, var7)
                     let var9 := addmod(a_5, var8, R)
@@ -585,17 +577,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var10, r)
                 }
                 {
-                    let f_11 := calldataload(0x0924)
+                    let f_7 := calldataload(0x07a4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_11)
+                    let var1 := sub(R, f_7)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_11, var2, R)
+                    let var3 := mulmod(f_7, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_0 := calldataload(0x06e4)
-                    let a_2 := calldataload(0x0724)
+                    let a_4 := calldataload(0x0664)
+                    let a_0 := calldataload(0x05e4)
+                    let a_2 := calldataload(0x0624)
                     let var7 := sub(R, a_2)
                     let var8 := addmod(a_0, var7, R)
                     let var9 := sub(R, var8)
@@ -604,17 +596,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var11, r)
                 }
                 {
-                    let f_12 := calldataload(0x0944)
+                    let f_8 := calldataload(0x07c4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_12)
+                    let var1 := sub(R, f_8)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_12, var2, R)
+                    let var3 := mulmod(f_8, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_5 := calldataload(0x0784)
-                    let a_1 := calldataload(0x0704)
-                    let a_3 := calldataload(0x0744)
+                    let a_5 := calldataload(0x0684)
+                    let a_1 := calldataload(0x0604)
+                    let a_3 := calldataload(0x0644)
                     let var7 := sub(R, a_3)
                     let var8 := addmod(a_1, var7, R)
                     let var9 := sub(R, var8)
@@ -623,23 +615,23 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var11, r)
                 }
                 {
-                    let f_13 := calldataload(0x0964)
+                    let f_9 := calldataload(0x07e4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_13)
+                    let var1 := sub(R, f_9)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_13, var2, R)
+                    let var3 := mulmod(f_9, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_4_prev_1 := calldataload(0x07a4)
+                    let a_4 := calldataload(0x0664)
+                    let a_4_prev_1 := calldataload(0x06a4)
                     let var7 := 0x0
-                    let a_0 := calldataload(0x06e4)
-                    let a_2 := calldataload(0x0724)
+                    let a_0 := calldataload(0x05e4)
+                    let a_2 := calldataload(0x0624)
                     let var8 := mulmod(a_0, a_2, R)
                     let var9 := addmod(var7, var8, R)
-                    let a_1 := calldataload(0x0704)
-                    let a_3 := calldataload(0x0744)
+                    let a_1 := calldataload(0x0604)
+                    let a_3 := calldataload(0x0644)
                     let var10 := mulmod(a_1, a_3, R)
                     let var11 := addmod(var9, var10, R)
                     let var12 := addmod(a_4_prev_1, var11, R)
@@ -649,22 +641,22 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var15, r)
                 }
                 {
-                    let f_13 := calldataload(0x0964)
+                    let f_9 := calldataload(0x07e4)
                     let var0 := 0x2
-                    let var1 := sub(R, f_13)
+                    let var1 := sub(R, f_9)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_13, var2, R)
+                    let var3 := mulmod(f_9, var2, R)
                     let var4 := 0x3
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
+                    let a_4 := calldataload(0x0664)
                     let var7 := 0x0
-                    let a_0 := calldataload(0x06e4)
-                    let a_2 := calldataload(0x0724)
+                    let a_0 := calldataload(0x05e4)
+                    let a_2 := calldataload(0x0624)
                     let var8 := mulmod(a_0, a_2, R)
                     let var9 := addmod(var7, var8, R)
-                    let a_1 := calldataload(0x0704)
-                    let a_3 := calldataload(0x0744)
+                    let a_1 := calldataload(0x0604)
+                    let a_3 := calldataload(0x0644)
                     let var10 := mulmod(a_1, a_3, R)
                     let var11 := addmod(var9, var10, R)
                     let var12 := sub(R, var11)
@@ -673,18 +665,18 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var14, r)
                 }
                 {
-                    let f_13 := calldataload(0x0964)
+                    let f_9 := calldataload(0x07e4)
                     let var0 := 0x1
-                    let var1 := sub(R, f_13)
+                    let var1 := sub(R, f_9)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_13, var2, R)
+                    let var3 := mulmod(f_9, var2, R)
                     let var4 := 0x2
                     let var5 := addmod(var4, var1, R)
                     let var6 := mulmod(var3, var5, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_2 := calldataload(0x0724)
+                    let a_4 := calldataload(0x0664)
+                    let a_2 := calldataload(0x0624)
                     let var7 := mulmod(var0, a_2, R)
-                    let a_3 := calldataload(0x0744)
+                    let a_3 := calldataload(0x0644)
                     let var8 := mulmod(var7, a_3, R)
                     let var9 := sub(R, var8)
                     let var10 := addmod(a_4, var9, R)
@@ -692,17 +684,17 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var11, r)
                 }
                 {
-                    let f_14 := calldataload(0x0984)
+                    let f_10 := calldataload(0x0804)
                     let var0 := 0x2
-                    let var1 := sub(R, f_14)
+                    let var1 := sub(R, f_10)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_14, var2, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_4_prev_1 := calldataload(0x07a4)
+                    let var3 := mulmod(f_10, var2, R)
+                    let a_4 := calldataload(0x0664)
+                    let a_4_prev_1 := calldataload(0x06a4)
                     let var4 := 0x1
-                    let a_2 := calldataload(0x0724)
+                    let a_2 := calldataload(0x0624)
                     let var5 := mulmod(var4, a_2, R)
-                    let a_3 := calldataload(0x0744)
+                    let a_3 := calldataload(0x0644)
                     let var6 := mulmod(var5, a_3, R)
                     let var7 := mulmod(a_4_prev_1, var6, R)
                     let var8 := sub(R, var7)
@@ -711,30 +703,30 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var10, r)
                 }
                 {
-                    let f_15 := calldataload(0x09a4)
-                    let a_4 := calldataload(0x0764)
+                    let f_11 := calldataload(0x0824)
+                    let a_4 := calldataload(0x0664)
                     let var0 := 0x0
-                    let a_2 := calldataload(0x0724)
+                    let a_2 := calldataload(0x0624)
                     let var1 := addmod(var0, a_2, R)
-                    let a_3 := calldataload(0x0744)
+                    let a_3 := calldataload(0x0644)
                     let var2 := addmod(var1, a_3, R)
                     let var3 := sub(R, var2)
                     let var4 := addmod(a_4, var3, R)
-                    let var5 := mulmod(f_15, var4, R)
+                    let var5 := mulmod(f_11, var4, R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var5, r)
                 }
                 {
-                    let f_14 := calldataload(0x0984)
+                    let f_10 := calldataload(0x0804)
                     let var0 := 0x1
-                    let var1 := sub(R, f_14)
+                    let var1 := sub(R, f_10)
                     let var2 := addmod(var0, var1, R)
-                    let var3 := mulmod(f_14, var2, R)
-                    let a_4 := calldataload(0x0764)
-                    let a_4_prev_1 := calldataload(0x07a4)
+                    let var3 := mulmod(f_10, var2, R)
+                    let a_4 := calldataload(0x0664)
+                    let a_4_prev_1 := calldataload(0x06a4)
                     let var4 := 0x0
-                    let a_2 := calldataload(0x0724)
+                    let a_2 := calldataload(0x0624)
                     let var5 := addmod(var4, a_2, R)
-                    let a_3 := calldataload(0x0744)
+                    let a_3 := calldataload(0x0644)
                     let var6 := addmod(var5, a_3, R)
                     let var7 := addmod(a_4_prev_1, var6, R)
                     let var8 := sub(R, var7)
@@ -743,91 +735,61 @@ contract Halo2Verifier {
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var10, r)
                 }
                 {
-                    let f_5 := calldataload(0x0864)
+                    let f_3 := calldataload(0x0724)
+                    let var0 := 0x0
+                    let var1 := mulmod(f_3, var0, R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
+                }
+                {
+                    let f_4 := calldataload(0x0744)
+                    let var0 := 0x0
+                    let var1 := mulmod(f_4, var0, R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
+                }
+                {
+                    let f_5 := calldataload(0x0764)
                     let var0 := 0x0
                     let var1 := mulmod(f_5, var0, R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
                 }
                 {
-                    let f_6 := calldataload(0x0884)
+                    let f_6 := calldataload(0x0784)
                     let var0 := 0x0
                     let var1 := mulmod(f_6, var0, R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
                 }
                 {
-                    let f_7 := calldataload(0x08a4)
-                    let var0 := 0x0
-                    let var1 := mulmod(f_7, var0, R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
-                }
-                {
-                    let f_8 := calldataload(0x08c4)
-                    let var0 := 0x0
-                    let var1 := mulmod(f_8, var0, R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
-                }
-                {
-                    let f_9 := calldataload(0x08e4)
-                    let var0 := 0x0
-                    let var1 := mulmod(f_9, var0, R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
-                }
-                {
-                    let f_10 := calldataload(0x0904)
-                    let var0 := 0x0
-                    let var1 := mulmod(f_10, var0, R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), var1, r)
-                }
-                {
                     let l_0 := mload(L_0_MPTR)
-                    let eval := addmod(l_0, sub(R, mulmod(l_0, calldataload(0x0ae4), R)), R)
+                    let eval := addmod(l_0, sub(R, mulmod(l_0, calldataload(0x0964), R)), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
-                    let perm_z_last := calldataload(0x0ba4)
+                    let perm_z_last := calldataload(0x0a24)
                     let eval := mulmod(mload(L_LAST_MPTR), addmod(mulmod(perm_z_last, perm_z_last, R), sub(R, perm_z_last), R), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
-                    let eval := mulmod(mload(L_0_MPTR), addmod(calldataload(0x0b44), sub(R, calldataload(0x0b24)), R), R)
+                    let eval := mulmod(mload(L_0_MPTR), addmod(calldataload(0x09c4), sub(R, calldataload(0x09a4)), R), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
-                    let eval := mulmod(mload(L_0_MPTR), addmod(calldataload(0x0ba4), sub(R, calldataload(0x0b84)), R), R)
+                    let eval := mulmod(mload(L_0_MPTR), addmod(calldataload(0x0a24), sub(R, calldataload(0x0a04)), R), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
                     let gamma := mload(GAMMA_MPTR)
                     let beta := mload(BETA_MPTR)
-                    let lhs := calldataload(0x0b04)
-                    let rhs := calldataload(0x0ae4)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x06e4), mulmod(beta, calldataload(0x09e4), R), R), gamma, R), R)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0704), mulmod(beta, calldataload(0x0a04), R), R), gamma, R), R)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0724), mulmod(beta, calldataload(0x0a24), R), R), gamma, R), R)
+                    let lhs := calldataload(0x0984)
+                    let rhs := calldataload(0x0964)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x05e4), mulmod(beta, calldataload(0x0864), R), R), gamma, R), R)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0604), mulmod(beta, calldataload(0x0884), R), R), gamma, R), R)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0624), mulmod(beta, calldataload(0x08a4), R), R), gamma, R), R)
                     mstore(0x00, mulmod(beta, mload(X_MPTR), R))
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x06e4), mload(0x00), R), gamma, R), R)
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x05e4), mload(0x00), R), gamma, R), R)
                     mstore(0x00, mulmod(mload(0x00), DELTA, R))
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0704), mload(0x00), R), gamma, R), R)
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0604), mload(0x00), R), gamma, R), R)
                     mstore(0x00, mulmod(mload(0x00), DELTA, R))
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0724), mload(0x00), R), gamma, R), R)
-                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
-                    let left_sub_right := addmod(lhs, sub(R, rhs), R)
-                    let eval := addmod(left_sub_right, sub(R, mulmod(left_sub_right, addmod(mload(L_LAST_MPTR), mload(L_BLIND_MPTR), R), R)), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let gamma := mload(GAMMA_MPTR)
-                    let beta := mload(BETA_MPTR)
-                    let lhs := calldataload(0x0b64)
-                    let rhs := calldataload(0x0b44)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0744), mulmod(beta, calldataload(0x0a44), R), R), gamma, R), R)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0764), mulmod(beta, calldataload(0x0a64), R), R), gamma, R), R)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0784), mulmod(beta, calldataload(0x0a84), R), R), gamma, R), R)
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0744), mload(0x00), R), gamma, R), R)
-                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0764), mload(0x00), R), gamma, R), R)
-                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0784), mload(0x00), R), gamma, R), R)
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0624), mload(0x00), R), gamma, R), R)
                     mstore(0x00, mulmod(mload(0x00), DELTA, R))
                     let left_sub_right := addmod(lhs, sub(R, rhs), R)
                     let eval := addmod(left_sub_right, sub(R, mulmod(left_sub_right, addmod(mload(L_LAST_MPTR), mload(L_BLIND_MPTR), R), R)), R)
@@ -836,11 +798,29 @@ contract Halo2Verifier {
                 {
                     let gamma := mload(GAMMA_MPTR)
                     let beta := mload(BETA_MPTR)
-                    let lhs := calldataload(0x0bc4)
-                    let rhs := calldataload(0x0ba4)
-                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x07c4), mulmod(beta, calldataload(0x0aa4), R), R), gamma, R), R)
-                    lhs := mulmod(lhs, addmod(addmod(mload(INSTANCE_EVAL_MPTR), mulmod(beta, calldataload(0x0ac4), R), R), gamma, R), R)
-                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x07c4), mload(0x00), R), gamma, R), R)
+                    let lhs := calldataload(0x09e4)
+                    let rhs := calldataload(0x09c4)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0644), mulmod(beta, calldataload(0x08c4), R), R), gamma, R), R)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0664), mulmod(beta, calldataload(0x08e4), R), R), gamma, R), R)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x0684), mulmod(beta, calldataload(0x0904), R), R), gamma, R), R)
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0644), mload(0x00), R), gamma, R), R)
+                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0664), mload(0x00), R), gamma, R), R)
+                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x0684), mload(0x00), R), gamma, R), R)
+                    mstore(0x00, mulmod(mload(0x00), DELTA, R))
+                    let left_sub_right := addmod(lhs, sub(R, rhs), R)
+                    let eval := addmod(left_sub_right, sub(R, mulmod(left_sub_right, addmod(mload(L_LAST_MPTR), mload(L_BLIND_MPTR), R), R)), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let gamma := mload(GAMMA_MPTR)
+                    let beta := mload(BETA_MPTR)
+                    let lhs := calldataload(0x0a44)
+                    let rhs := calldataload(0x0a24)
+                    lhs := mulmod(lhs, addmod(addmod(calldataload(0x06c4), mulmod(beta, calldataload(0x0924), R), R), gamma, R), R)
+                    lhs := mulmod(lhs, addmod(addmod(mload(INSTANCE_EVAL_MPTR), mulmod(beta, calldataload(0x0944), R), R), gamma, R), R)
+                    rhs := mulmod(rhs, addmod(addmod(calldataload(0x06c4), mload(0x00), R), gamma, R), R)
                     mstore(0x00, mulmod(mload(0x00), DELTA, R))
                     rhs := mulmod(rhs, addmod(addmod(mload(INSTANCE_EVAL_MPTR), mload(0x00), R), gamma, R), R)
                     let left_sub_right := addmod(lhs, sub(R, rhs), R)
@@ -849,12 +829,12 @@ contract Halo2Verifier {
                 }
                 {
                     let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0be4), R)
+                    let eval := mulmod(l_0, calldataload(0x0a64), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
                     let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0be4), R)
+                    let eval := mulmod(l_last, calldataload(0x0a64), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
@@ -862,31 +842,113 @@ contract Halo2Verifier {
                     let beta := mload(BETA_MPTR)
                     let table
                     {
-                        let f_1 := calldataload(0x07e4)
-                        let f_2 := calldataload(0x0804)
+                        let f_1 := calldataload(0x06e4)
                         table := f_1
-                        table := addmod(mulmod(table, theta, R), f_2, R)
                         table := addmod(table, beta, R)
                     }
                     let input_0
                     {
-                        let f_5 := calldataload(0x0864)
+                        let f_3 := calldataload(0x0724)
+                        let var0 := 0x1
+                        let var1 := mulmod(f_3, var0, R)
+                        let a_0 := calldataload(0x05e4)
+                        let var2 := mulmod(var1, a_0, R)
+                        let var3 := sub(R, var1)
+                        let var4 := addmod(var0, var3, R)
+                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000000
+                        let var6 := mulmod(var4, var5, R)
+                        let var7 := addmod(var2, var6, R)
+                        input_0 := var7
+                        input_0 := addmod(input_0, beta, R)
+                    }
+                    let lhs
+                    let rhs
+                    rhs := table
+                    {
+                        let tmp := input_0
+                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0aa4), tmp, R)), R)
+                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0a84), sub(R, calldataload(0x0a64)), R), R)
+                    }
+                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let l_0 := mload(L_0_MPTR)
+                    let eval := mulmod(l_0, calldataload(0x0ac4), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let l_last := mload(L_LAST_MPTR)
+                    let eval := mulmod(l_last, calldataload(0x0ac4), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let theta := mload(THETA_MPTR)
+                    let beta := mload(BETA_MPTR)
+                    let table
+                    {
+                        let f_1 := calldataload(0x06e4)
+                        table := f_1
+                        table := addmod(table, beta, R)
+                    }
+                    let input_0
+                    {
+                        let f_4 := calldataload(0x0744)
+                        let var0 := 0x1
+                        let var1 := mulmod(f_4, var0, R)
+                        let a_1 := calldataload(0x0604)
+                        let var2 := mulmod(var1, a_1, R)
+                        let var3 := sub(R, var1)
+                        let var4 := addmod(var0, var3, R)
+                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000000
+                        let var6 := mulmod(var4, var5, R)
+                        let var7 := addmod(var2, var6, R)
+                        input_0 := var7
+                        input_0 := addmod(input_0, beta, R)
+                    }
+                    let lhs
+                    let rhs
+                    rhs := table
+                    {
+                        let tmp := input_0
+                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0b04), tmp, R)), R)
+                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0ae4), sub(R, calldataload(0x0ac4)), R), R)
+                    }
+                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let l_0 := mload(L_0_MPTR)
+                    let eval := mulmod(l_0, calldataload(0x0b24), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let l_last := mload(L_LAST_MPTR)
+                    let eval := mulmod(l_last, calldataload(0x0b24), R)
+                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
+                }
+                {
+                    let theta := mload(THETA_MPTR)
+                    let beta := mload(BETA_MPTR)
+                    let table
+                    {
+                        let f_2 := calldataload(0x0704)
+                        table := f_2
+                        table := addmod(table, beta, R)
+                    }
+                    let input_0
+                    {
+                        let f_5 := calldataload(0x0764)
                         let var0 := 0x1
                         let var1 := mulmod(f_5, var0, R)
-                        let a_0 := calldataload(0x06e4)
+                        let a_0 := calldataload(0x05e4)
                         let var2 := mulmod(var1, a_0, R)
                         let var3 := sub(R, var1)
                         let var4 := addmod(var0, var3, R)
-                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effebb97
+                        let var5 := 0x0
                         let var6 := mulmod(var4, var5, R)
                         let var7 := addmod(var2, var6, R)
-                        let a_4 := calldataload(0x0764)
-                        let var8 := mulmod(var1, a_4, R)
-                        let var9 := 0x0
-                        let var10 := mulmod(var4, var9, R)
-                        let var11 := addmod(var8, var10, R)
                         input_0 := var7
-                        input_0 := addmod(mulmod(input_0, theta, R), var11, R)
                         input_0 := addmod(input_0, beta, R)
                     }
                     let lhs
@@ -894,20 +956,20 @@ contract Halo2Verifier {
                     rhs := table
                     {
                         let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0c24), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0c04), sub(R, calldataload(0x0be4)), R), R)
+                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0b64), tmp, R)), R)
+                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0b44), sub(R, calldataload(0x0b24)), R), R)
                     }
                     let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
                     let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0c44), R)
+                    let eval := mulmod(l_0, calldataload(0x0b84), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
                     let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0c44), R)
+                    let eval := mulmod(l_last, calldataload(0x0b84), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
                 }
                 {
@@ -915,114 +977,16 @@ contract Halo2Verifier {
                     let beta := mload(BETA_MPTR)
                     let table
                     {
-                        let f_1 := calldataload(0x07e4)
-                        let f_2 := calldataload(0x0804)
-                        table := f_1
-                        table := addmod(mulmod(table, theta, R), f_2, R)
+                        let f_2 := calldataload(0x0704)
+                        table := f_2
                         table := addmod(table, beta, R)
                     }
                     let input_0
                     {
-                        let f_6 := calldataload(0x0884)
+                        let f_6 := calldataload(0x0784)
                         let var0 := 0x1
                         let var1 := mulmod(f_6, var0, R)
-                        let a_1 := calldataload(0x0704)
-                        let var2 := mulmod(var1, a_1, R)
-                        let var3 := sub(R, var1)
-                        let var4 := addmod(var0, var3, R)
-                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593effebb97
-                        let var6 := mulmod(var4, var5, R)
-                        let var7 := addmod(var2, var6, R)
-                        let a_5 := calldataload(0x0784)
-                        let var8 := mulmod(var1, a_5, R)
-                        let var9 := 0x0
-                        let var10 := mulmod(var4, var9, R)
-                        let var11 := addmod(var8, var10, R)
-                        input_0 := var7
-                        input_0 := addmod(mulmod(input_0, theta, R), var11, R)
-                        input_0 := addmod(input_0, beta, R)
-                    }
-                    let lhs
-                    let rhs
-                    rhs := table
-                    {
-                        let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0c84), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0c64), sub(R, calldataload(0x0c44)), R), R)
-                    }
-                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0ca4), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0ca4), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let theta := mload(THETA_MPTR)
-                    let beta := mload(BETA_MPTR)
-                    let table
-                    {
-                        let f_3 := calldataload(0x0824)
-                        table := f_3
-                        table := addmod(table, beta, R)
-                    }
-                    let input_0
-                    {
-                        let f_7 := calldataload(0x08a4)
-                        let var0 := 0x1
-                        let var1 := mulmod(f_7, var0, R)
-                        let a_0 := calldataload(0x06e4)
-                        let var2 := mulmod(var1, a_0, R)
-                        let var3 := sub(R, var1)
-                        let var4 := addmod(var0, var3, R)
-                        let var5 := 0x0
-                        let var6 := mulmod(var4, var5, R)
-                        let var7 := addmod(var2, var6, R)
-                        input_0 := var7
-                        input_0 := addmod(input_0, beta, R)
-                    }
-                    let lhs
-                    let rhs
-                    rhs := table
-                    {
-                        let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0ce4), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0cc4), sub(R, calldataload(0x0ca4)), R), R)
-                    }
-                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0d04), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0d04), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let theta := mload(THETA_MPTR)
-                    let beta := mload(BETA_MPTR)
-                    let table
-                    {
-                        let f_3 := calldataload(0x0824)
-                        table := f_3
-                        table := addmod(table, beta, R)
-                    }
-                    let input_0
-                    {
-                        let f_8 := calldataload(0x08c4)
-                        let var0 := 0x1
-                        let var1 := mulmod(f_8, var0, R)
-                        let a_1 := calldataload(0x0704)
+                        let a_1 := calldataload(0x0604)
                         let var2 := mulmod(var1, a_1, R)
                         let var3 := sub(R, var1)
                         let var4 := addmod(var0, var3, R)
@@ -1037,98 +1001,8 @@ contract Halo2Verifier {
                     rhs := table
                     {
                         let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0d44), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0d24), sub(R, calldataload(0x0d04)), R), R)
-                    }
-                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0d64), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0d64), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let theta := mload(THETA_MPTR)
-                    let beta := mload(BETA_MPTR)
-                    let table
-                    {
-                        let f_4 := calldataload(0x0844)
-                        table := f_4
-                        table := addmod(table, beta, R)
-                    }
-                    let input_0
-                    {
-                        let f_9 := calldataload(0x08e4)
-                        let var0 := 0x1
-                        let var1 := mulmod(f_9, var0, R)
-                        let a_0 := calldataload(0x06e4)
-                        let var2 := mulmod(var1, a_0, R)
-                        let var3 := sub(R, var1)
-                        let var4 := addmod(var0, var3, R)
-                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000000
-                        let var6 := mulmod(var4, var5, R)
-                        let var7 := addmod(var2, var6, R)
-                        input_0 := var7
-                        input_0 := addmod(input_0, beta, R)
-                    }
-                    let lhs
-                    let rhs
-                    rhs := table
-                    {
-                        let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0da4), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0d84), sub(R, calldataload(0x0d64)), R), R)
-                    }
-                    let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_0 := mload(L_0_MPTR)
-                    let eval := mulmod(l_0, calldataload(0x0dc4), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let l_last := mload(L_LAST_MPTR)
-                    let eval := mulmod(l_last, calldataload(0x0dc4), R)
-                    quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
-                }
-                {
-                    let theta := mload(THETA_MPTR)
-                    let beta := mload(BETA_MPTR)
-                    let table
-                    {
-                        let f_4 := calldataload(0x0844)
-                        table := f_4
-                        table := addmod(table, beta, R)
-                    }
-                    let input_0
-                    {
-                        let f_10 := calldataload(0x0904)
-                        let var0 := 0x1
-                        let var1 := mulmod(f_10, var0, R)
-                        let a_1 := calldataload(0x0704)
-                        let var2 := mulmod(var1, a_1, R)
-                        let var3 := sub(R, var1)
-                        let var4 := addmod(var0, var3, R)
-                        let var5 := 0x30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000000
-                        let var6 := mulmod(var4, var5, R)
-                        let var7 := addmod(var2, var6, R)
-                        input_0 := var7
-                        input_0 := addmod(input_0, beta, R)
-                    }
-                    let lhs
-                    let rhs
-                    rhs := table
-                    {
-                        let tmp := input_0
-                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0e04), tmp, R)), R)
-                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0de4), sub(R, calldataload(0x0dc4)), R), R)
+                        rhs := addmod(rhs, sub(R, mulmod(calldataload(0x0bc4), tmp, R)), R)
+                        lhs := mulmod(mulmod(table, tmp, R), addmod(calldataload(0x0ba4), sub(R, calldataload(0x0b84)), R), R)
                     }
                     let eval := mulmod(addmod(1, sub(R, addmod(mload(L_BLIND_MPTR), mload(L_LAST_MPTR), R)), R), addmod(lhs, sub(R, rhs), R), R)
                     quotient_eval_numer := addmod(mulmod(quotient_eval_numer, y, r), eval, r)
@@ -1279,13 +1153,13 @@ contract Halo2Verifier {
                     let coeff := mload(0x20)
                     let zeta := mload(ZETA_MPTR)
                     let r_eval := 0
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x09c4), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0844), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
                     r_eval := addmod(r_eval, mulmod(coeff, mload(QUOTIENT_EVAL_MPTR), R), R)
                     for
                         {
-                            let mptr := 0x0ac4
-                            let mptr_end := 0x09c4
+                            let mptr := 0x0944
+                            let mptr_end := 0x0844
                         }
                         lt(mptr_end, mptr)
                         { mptr := sub(mptr, 0x20) }
@@ -1294,8 +1168,8 @@ contract Halo2Verifier {
                     }
                     for
                         {
-                            let mptr := 0x09a4
-                            let mptr_end := 0x07a4
+                            let mptr := 0x0824
+                            let mptr_end := 0x06a4
                         }
                         lt(mptr_end, mptr)
                         { mptr := sub(mptr, 0x20) }
@@ -1303,23 +1177,19 @@ contract Halo2Verifier {
                         r_eval := addmod(mulmod(r_eval, zeta, R), mulmod(coeff, calldataload(mptr), R), R)
                     }
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0e04), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0bc4), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0da4), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0b64), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0d44), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0b04), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0ce4), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0aa4), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0c84), R), R)
-                    r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0c24), R), R)
-                    r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0784), R), R)
+                    r_eval := addmod(r_eval, mulmod(coeff, calldataload(0x0684), R), R)
                     for
                         {
-                            let mptr := 0x0744
-                            let mptr_end := 0x06c4
+                            let mptr := 0x0644
+                            let mptr_end := 0x05c4
                         }
                         lt(mptr_end, mptr)
                         { mptr := sub(mptr, 0x20) }
@@ -1331,47 +1201,41 @@ contract Halo2Verifier {
                 {
                     let zeta := mload(ZETA_MPTR)
                     let r_eval := 0
-                    r_eval := addmod(r_eval, mulmod(mload(0x40), calldataload(0x07a4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x60), calldataload(0x0764), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x40), calldataload(0x06a4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x60), calldataload(0x0664), R), R)
                     r_eval := mulmod(r_eval, mload(0x0440), R)
                     mstore(0x04c0, r_eval)
                 }
                 {
                     let zeta := mload(ZETA_MPTR)
                     let r_eval := 0
-                    r_eval := addmod(r_eval, mulmod(mload(0x80), calldataload(0x0b84), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xa0), calldataload(0x0b44), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xc0), calldataload(0x0b64), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x80), calldataload(0x0a04), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xa0), calldataload(0x09c4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xc0), calldataload(0x09e4), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x80), calldataload(0x0b24), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xa0), calldataload(0x0ae4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xc0), calldataload(0x0b04), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x80), calldataload(0x09a4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xa0), calldataload(0x0964), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xc0), calldataload(0x0984), R), R)
                     r_eval := mulmod(r_eval, mload(0x0460), R)
                     mstore(0x04e0, r_eval)
                 }
                 {
                     let zeta := mload(ZETA_MPTR)
                     let r_eval := 0
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0dc4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0de4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0b84), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0ba4), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0d64), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0d84), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0b24), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0b44), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0d04), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0d24), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0ac4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0ae4), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0ca4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0cc4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0a64), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0a84), R), R)
                     r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0c44), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0c64), R), R)
-                    r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0be4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0c04), R), R)
-                    r_eval := mulmod(r_eval, zeta, R)
-                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0ba4), R), R)
-                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0bc4), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0xe0), calldataload(0x0a24), R), R)
+                    r_eval := addmod(r_eval, mulmod(mload(0x0100), calldataload(0x0a44), R), R)
                     r_eval := mulmod(r_eval, mload(0x0480), R)
                     mstore(0x0500, r_eval)
                 }
@@ -1431,14 +1295,14 @@ contract Halo2Verifier {
                 }
                 {
                     let nu := mload(NU_MPTR)
-                    mstore(0x00, calldataload(0x05a4))
-                    mstore(0x20, calldataload(0x05c4))
+                    mstore(0x00, calldataload(0x04a4))
+                    mstore(0x20, calldataload(0x04c4))
                     success := ec_mul_acc(success, mload(ZETA_MPTR))
                     success := ec_add_acc(success, mload(QUOTIENT_X_MPTR), mload(QUOTIENT_Y_MPTR))
                     for
                         {
-                            let mptr := 0x0fc0
-                            let mptr_end := 0x09c0
+                            let mptr := 0x0d80
+                            let mptr_end := 0x0880
                         }
                         lt(mptr_end, mptr)
                         { mptr := sub(mptr, 0x40) }
@@ -1448,7 +1312,7 @@ contract Halo2Verifier {
                     }
                     for
                         {
-                            let mptr := 0x0324
+                            let mptr := 0x02a4
                             let mptr_end := 0x0164
                         }
                         lt(mptr_end, mptr)
@@ -1473,19 +1337,19 @@ contract Halo2Verifier {
                     success := ec_mul_tmp(success, mulmod(nu, mload(0x0440), R))
                     success := ec_add_acc(success, mload(0x80), mload(0xa0))
                     nu := mulmod(nu, mload(NU_MPTR), R)
-                    mstore(0x80, calldataload(0x03a4))
-                    mstore(0xa0, calldataload(0x03c4))
+                    mstore(0x80, calldataload(0x0324))
+                    mstore(0xa0, calldataload(0x0344))
                     success := ec_mul_tmp(success, mload(ZETA_MPTR))
-                    success := ec_add_tmp(success, calldataload(0x0364), calldataload(0x0384))
+                    success := ec_add_tmp(success, calldataload(0x02e4), calldataload(0x0304))
                     success := ec_mul_tmp(success, mulmod(nu, mload(0x0460), R))
                     success := ec_add_acc(success, mload(0x80), mload(0xa0))
                     nu := mulmod(nu, mload(NU_MPTR), R)
-                    mstore(0x80, calldataload(0x0564))
-                    mstore(0xa0, calldataload(0x0584))
+                    mstore(0x80, calldataload(0x0464))
+                    mstore(0xa0, calldataload(0x0484))
                     for
                         {
-                            let mptr := 0x0524
-                            let mptr_end := 0x03a4
+                            let mptr := 0x0424
+                            let mptr_end := 0x0324
                         }
                         lt(mptr_end, mptr)
                         { mptr := sub(mptr, 0x40) }
@@ -1499,18 +1363,18 @@ contract Halo2Verifier {
                     mstore(0xa0, mload(G1_Y_MPTR))
                     success := ec_mul_tmp(success, sub(R, mload(R_EVAL_MPTR)))
                     success := ec_add_acc(success, mload(0x80), mload(0xa0))
-                    mstore(0x80, calldataload(0x0e24))
-                    mstore(0xa0, calldataload(0x0e44))
+                    mstore(0x80, calldataload(0x0be4))
+                    mstore(0xa0, calldataload(0x0c04))
                     success := ec_mul_tmp(success, sub(R, mload(0x0400)))
                     success := ec_add_acc(success, mload(0x80), mload(0xa0))
-                    mstore(0x80, calldataload(0x0e64))
-                    mstore(0xa0, calldataload(0x0e84))
+                    mstore(0x80, calldataload(0x0c24))
+                    mstore(0xa0, calldataload(0x0c44))
                     success := ec_mul_tmp(success, mload(MU_MPTR))
                     success := ec_add_acc(success, mload(0x80), mload(0xa0))
                     mstore(PAIRING_LHS_X_MPTR, mload(0x00))
                     mstore(PAIRING_LHS_Y_MPTR, mload(0x20))
-                    mstore(PAIRING_RHS_X_MPTR, calldataload(0x0e64))
-                    mstore(PAIRING_RHS_Y_MPTR, calldataload(0x0e84))
+                    mstore(PAIRING_RHS_X_MPTR, calldataload(0x0c24))
+                    mstore(PAIRING_RHS_Y_MPTR, calldataload(0x0c44))
                 }
             }
 
