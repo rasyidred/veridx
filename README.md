@@ -70,7 +70,14 @@ uv sync
 uv run jupyter lab
 ```
 
-Open `main.ipynb` and run it top to bottom:
+**Quick check (no Python needed):** the committed proof is verified by a Foundry test, including a tampered-output case that must revert.
+
+```powershell
+cd contracts
+forge test
+```
+
+**Full pipeline:** open `main.ipynb` and run it top to bottom:
 
 | Phase | What it does |
 |---|---|
@@ -89,7 +96,7 @@ Notes:
 ```
 main.ipynb        end-to-end pipeline: training → ONNX → proof → on-chain verification
 artifacts/        generated files: network.onnx, settings.json, proof.json, Verifier.sol, ...
-contracts/        Foundry project that builds and deploys the verifier
+contracts/        Foundry project: verifier + tests (valid proof, tampered output)
 ```
 
 ## Tech stack
