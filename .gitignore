@@ -1,0 +1,24 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local assistant notes
+CLAUDE.md
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Foundry build output
+contracts/cache/
+contracts/out/
+
+# ZK artifacts (large / regenerable)
+artifacts/*.key
+artifacts/*.compiled
