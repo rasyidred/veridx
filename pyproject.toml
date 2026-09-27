@@ -1,7 +1,7 @@
 [project]
 name = "pytorch-tutorial"
 version = "0.1.0"
-description = "Add your description here"
+description = "Verifiable AI diagnosis with zero-knowledge proofs (PyTorch, EZKL, Solidity)"
 readme = "README.md"
 authors = [
     { name = "rasyidred", email = "rasyid.red@gmail.com" }
