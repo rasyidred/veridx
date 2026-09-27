@@ -83,7 +83,7 @@ forge test
 
 | Phase | What it does |
 |---|---|
-| 1.5 | Load data, train and evaluate BCNet |
+| 1 | Load data, train and evaluate BCNet |
 | 2 | Export to ONNX, write `input.json` |
 | 3 | EZKL settings, calibration, compile, SRS, keys, witness, proof, local verify |
 | 4 | Generate `Verifier.sol`, build with Foundry, deploy to Anvil, verify on-chain, tamper test |
