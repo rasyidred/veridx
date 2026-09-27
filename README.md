@@ -1,5 +1,7 @@
 # VeriDx
 
+[![Tests](https://github.com/rasyidred/veridx/actions/workflows/test.yml/badge.svg)](https://github.com/rasyidred/veridx/actions/workflows/test.yml)
+
 **Verifiable AI diagnosis with zero-knowledge proofs.**
 
 A PyTorch breast-cancer classifier is compiled into a Halo2 circuit with [EZKL](https://github.com/zkonduit/ezkl), proven locally, and verified on-chain by a generated Solidity verifier. Anyone can check that a diagnosis came from the committed model, without trusting whoever ran it and without seeing the weights.
