@@ -1,11 +1,9 @@
 [project]
-name = "pytorch-tutorial"
+name = "veridx"
 version = "0.1.0"
 description = "Verifiable AI diagnosis with zero-knowledge proofs (PyTorch, EZKL, Solidity)"
 readme = "README.md"
-authors = [
-    { name = "rasyidred", email = "rasyid.red@gmail.com" }
-]
+authors = [{ name = "rasyidred", email = "rasyid.red@gmail.com" }]
 requires-python = ">=3.14"
 dependencies = [
     "ezkl>=23.0.5",
@@ -17,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-pytorch-tutorial = "pytorch_tutorial:main"
+veridx = "veridx:main"
 
 [[tool.uv.index]]
 name = "pytorch-cuda"
@@ -27,6 +25,9 @@ explicit = true
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "veridx"
 
 [tool.uv.sources]
 torch = { index = "pytorch-cuda" }
